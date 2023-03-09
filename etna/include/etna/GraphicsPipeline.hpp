@@ -37,6 +37,14 @@ public:
         .topology = vk::PrimitiveTopology::eTriangleList
       };
 
+    // Configuration for tesselation.
+    // Default tessellated surface is a triangle patch.
+    vk::PipelineTessellationStateCreateInfo tesselationConfig =
+     {
+       // The number of control points per patch.
+      .patchControlPoints = 3
+     };
+
     // Configuration for the rasterizer
     vk::PipelineRasterizationStateCreateInfo rasterizationConfig =
       {
